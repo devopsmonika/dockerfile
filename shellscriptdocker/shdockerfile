@@ -1,0 +1,8 @@
+FROM mysql
+MAINTAINER monika
+ENV MYSQL_ROOT_PASSWORD Pass@123
+EXPOSE 3306
+COPY myshfile.sh /docker-entrypoint-initdb.d/myshfile.sh
+RUN chmod +x /docker-entrypoint-initdb.d/myshfile.sh
+CMD ["mysqld"]
+
